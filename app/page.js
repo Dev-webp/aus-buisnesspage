@@ -1,14 +1,27 @@
-"use client";
+"use client"
 
+import { useState, useEffect } from "react";
 import Form from "./components/Form";
 
 const ContactPage = () => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  // Trigger when background image is fully loaded
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
+
+  useEffect(() => {
+    // Optionally, add more logic here if needed to track when image loading starts
+  }, []);
+
   return (
     <>
       {/* Background Image Section */}
       <div 
-        className="relative bg-cover bg-center min-h-screen"
+        className={`relative bg-cover bg-center min-h-screen ${isImageLoaded ? 'bg-loaded' : 'bg-loading'}`}
         style={{ backgroundImage: "url('/1.jpg')" }}
+        onLoad={handleImageLoad} // Trigger when image is loaded
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40 animate-fadeIn"></div>
@@ -33,7 +46,7 @@ const ContactPage = () => {
             <h1 className="uppercase text-[1.70rem] text-center font-semibold font-serif animate-slideInDown">
               Sign up & Get Free Assistance
             </h1>
-            <Form/>
+            <Form />
           </div>
         </div>
       </div>
