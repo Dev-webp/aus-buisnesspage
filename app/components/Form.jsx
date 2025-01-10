@@ -5,10 +5,13 @@ const Form = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [age, setAge] = useState('');
+  const [experience, setExperience] = useState('');
+  const [qualification, setQualification] = useState('');
+  const [country, setCountry] = useState('');  // New state for Country
   const [message, setMessage] = useState('');
-  const [formStatus, setFormStatus] = useState(null); // Stores success or error message
-  const [loading, setLoading] = useState(false); // State to track loading status
-  const [popupVisible, setPopupVisible] = useState(false); // State for showing the success popup
+  const [formStatus, setFormStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [popupVisible, setPopupVisible] = useState(false);
 
   // Close the success popup after 4 seconds
   useEffect(() => {
@@ -31,6 +34,9 @@ const Form = () => {
       email,
       phone,
       age,
+      experience,
+      qualification,
+      country,  // Include country in formData
       message,
     };
 
@@ -49,6 +55,9 @@ const Form = () => {
         setEmail('');
         setPhone('');
         setAge('');
+        setExperience('');
+        setQualification('');
+        setCountry('');  // Clear country
         setMessage('');
         setPopupVisible(true); // Show success popup
       } else {
@@ -63,10 +72,10 @@ const Form = () => {
   };
 
   return (
-    <div className="">
-      {/* <h2 className="text-3xl font-bold text-center uppercase text-gray-800 mt-0 lg:mt-4">Sign up & Get Free Assistance</h2> */}
-
-      <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-4 mt-4 lg:mt-4">
+    <div className="bg-white p-4 py-2 rounded-lg shadow-sm max-w-md mx-auto w-full h-[35rem] md:h-[32rem] lg:h-[32rem] tablet:h-[35rem] shadow-orange-300 mb-6 lg:mb-2">
+      <h2 className="text-2xl font-bold text-center uppercase text-gray-800 mt-0 lg:mt-3">Sign up & Get Free Assessment</h2>
+      
+      <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-3 mt-2 lg:mt-2">
         <div>
           <label htmlFor="name" className="sr-only">Name</label>
           <input
@@ -74,7 +83,7 @@ const Form = () => {
             id="name"
             name="name"
             placeholder="Your Name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            className="w-full px-4 py-1 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -88,7 +97,7 @@ const Form = () => {
             id="email"
             name="email"
             placeholder="Your Email"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            className="w-full px-4 py-1 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -102,7 +111,7 @@ const Form = () => {
             id="phone"
             name="phone"
             placeholder="Phone Number"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            className="w-full px-4 py-1 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
             required
             pattern="\d*"
             title="Please enter a valid phone number"
@@ -113,6 +122,21 @@ const Form = () => {
           />
         </div>
 
+        {/* Country Input */}
+        <div>
+          <label htmlFor="country" className="sr-only">Your Country</label>
+          <input
+            type="text"
+            id="country"
+            name="country"
+            placeholder="Country"
+            className="w-full px-4 py-1 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            required
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          />
+        </div>
+
         <div>
           <label htmlFor="age" className="sr-only">Age</label>
           <input
@@ -120,11 +144,48 @@ const Form = () => {
             id="age"
             name="age"
             placeholder="Your Age"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            className="w-full px-4 py-1 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
             required
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
+        </div>
+
+        {/* Experience Input */}
+        <div>
+          <label htmlFor="experience" className="sr-only">Experience</label>
+          <select
+            id="experience"
+            name="experience"
+            className="w-full px-4 py-1 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            value={experience}
+            onChange={(e) => setExperience(e.target.value)}
+          >
+            <option value="">Select Experience</option>
+            <option value="1-2 years">1-2 years</option>
+            <option value="3-5 years">3-5 years</option>
+            <option value="5-7 years">5-7 years</option>
+            <option value="7+ years">7+ years</option>
+          </select>
+        </div>
+
+        {/* Qualification Dropdown */}
+        <div>
+          <label htmlFor="qualification" className="sr-only">Qualification</label>
+          <select
+            id="qualification"
+            name="qualification"
+            className="w-full px-4 py-1 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+            value={qualification}
+            onChange={(e) => setQualification(e.target.value)}
+          >
+            <option value="">Select your qualification</option>
+            <option value="High School">High School</option>
+            <option value="Bachelor's Degree">Bachelor&apos;s Degree</option>
+            <option value="Master's Degree">Master&apos;s Degree</option>
+            <option value="Ph.D.">Ph.D.</option>
+            <option value="Diploma">Diploma</option>
+          </select>
         </div>
 
         <div>
@@ -132,7 +193,7 @@ const Form = () => {
           <textarea
             id="message"
             name="message"
-            rows="4"
+            rows="2"
             placeholder="Your Message"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition resize-none"
             value={message}
@@ -140,16 +201,13 @@ const Form = () => {
           ></textarea>
         </div>
 
-        <div className="flex justify-center mt-4">
-  <button
-    type="submit"
-    className="w-72 bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-saffron transition-all duration-200 shadow-lg"
-    disabled={loading} // Disable the button while loading
-  >
-    {formStatus === 'success' ? 'Form Submitted!' : loading ? 'Submitting...' : 'Submit'}
-  </button>
-</div>
-
+        <button
+          type="submit"
+          className="w-full bg-gray-950 text-white py-2 rounded-lg font-semibold hover:bg-saffron transition-all duration-200 shadow-lg"
+          disabled={loading}
+        >
+          {formStatus === 'success' ? 'Form Submitted!' : loading ? 'Submitting...' : 'Submit for Free Assessment'}
+        </button>
       </form>
 
       {/* Success Popup */}
