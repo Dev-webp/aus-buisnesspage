@@ -14,10 +14,42 @@ const Content = () => {
       <p style={{ marginBottom: '20px' }}>
         At VJC Overseas, we take immense pride in offering one of the most promising pathways to secure a future in Germany: the Germany Opportunity Card. This new, innovative initiative has opened up exciting prospects for skilled professionals, allowing them to live and work in one of Europe’s most thriving economies.
       </p>
-      <h3 style={{ color: "black", fontWeight: "bold", marginBottom: '20px' }}>What is the Germany Opportunity Card?</h3>
-      <p style={{ marginBottom: '20px' }}>
-        The Germany Opportunity Card is a new immigration pathway designed for highly skilled workers from outside the European Union to move to Germany. The card offers a flexible and faster approach to obtaining a residence permit for work purposes, especially for those in fields where there is a recognized skills shortage. This opportunity card is the perfect solution for individuals seeking to explore career opportunities, enhance professional growth, and experience life in one of the world’s most advanced countries.
-      </p>
+      
+
+      <div className="flex flex-col lg:flex-row items-start h-auto lg:space-x-6 space-y-4 lg:space-y-0">
+  {/* Image Section */}
+  <div className="flex-shrink-0 mx-auto lg:mx-0">
+    <img
+      src="/gocimg.png"
+      alt="Image description"
+      className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-80 lg:h-70 object-contain shadow-lg rounded-lg"
+    />
+  </div>
+
+  {/* Text Section */}
+  <div className="px-4 lg:px-0">
+    <h3 className="text-black font-bold mb-4 text-lg sm:text-xl">
+      What is the Germany Opportunity Card?
+    </h3>
+    <p className="mb-4 text-sm sm:text-base">
+      The Germany Opportunity Card is a new immigration pathway designed for
+      highly skilled workers from outside the European Union to move to
+      Germany. The card offers a flexible and faster approach to obtaining a
+      residence permit for work purposes, especially for those in fields where
+      there is a recognized skills shortage.
+    </p>
+   
+  </div>
+</div>
+      
+<p className="hidden lg:block">
+  This opportunity card is the perfect solution for individuals seeking to
+  explore career opportunities, enhance professional growth, and experience
+  life in one of the world’s most advanced countries.
+</p>
+
+
+
       <h3 style={{ color: "black", fontWeight: "bold", marginBottom: '20px' }}>Why Choose VJC Overseas?</h3>
       <p style={{ marginBottom: '20px' }}>
         At VJC Overseas, our mission is to simplify the process for professionals looking to move to Germany. With our unparalleled expertise and deep understanding of the German immigration system, we ensure that every step of your application is handled with care, precision, and efficiency.
