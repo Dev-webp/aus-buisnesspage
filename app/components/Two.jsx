@@ -169,119 +169,117 @@ const Migrate = () => {
 
     
     <section className="py-10 bg-gradient-to-bl from-white to-orange-50">
-      <div className="max-w-screen-xl mx-auto flex gap-8">
-        {/* Left Sidebar (Country or Visa List) */}
-        <div className="lg:w-[27%] w-full sticky top-0 h-full">
-          <h2 className="text-2xl text-orange-500 font-bold mb-6 uppercase text-center tracking-wide">
-            {viewingVisaDetail ? "Visa Details" : selectedVisa ? "Visa Types" : "Countries to Migrate To"}
-          </h2>
+  <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-8 mt-5">
+    {/* Left Sidebar (Country or Visa List) */}
+    <div className="w-full lg:w-[27%] sticky top-0 h-full mb-2 lg:mb-0">
+      <h2 className="text-2xl font-bold mb-6 uppercase text-center tracking-wide" style={{color:'rgb(220, 4, 4)'}}>
+        {viewingVisaDetail ? "Visa Details" : selectedVisa ? "Visa Types" : "Countries to Migrate .."}
+      </h2>
 
-          <ul className="space-y-3 text-gray-700">
-            {/* Show countries list if not in visa types view */}
-            {!showVisaTypes && !viewingVisaDetail &&
-              Object.keys(countriesData).map((country, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleCountrySelect(country)}
-                  className={`cursor-pointer hover:text-white hover:bg-custom-blue transition duration-300 px-6 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
-                    country === selectedCountry ? "bg-custom-blue text-white" : ""
-                  }`}
-                >
-                  <span>{country}</span>
-                  <AiFillCaretRight className="h-4 w-4 text-gray-900" />
-                </li>
-              ))}
-
-            {/* Show visa types if in visa types view */}
-            {showVisaTypes &&
-              countriesData[selectedCountry]?.visaTypes.map((visa, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleVisaSelect(visa)}
-                  className={`cursor-pointer hover:text-white hover:bg-custom-blue transition duration-300 px-4 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
-                    visa === selectedVisa ? "bg-custom-blue text-white" : ""
-                  }`}
-                >
-                  <span>{visa}</span>
-                  {getIconForVisaType(visa)}
-                </li>
-              ))}
-          </ul>
-
-          {/* Back button to go back to countries list */}
-          {showVisaTypes && !viewingVisaDetail && (
-            <button
-              onClick={handleBackToCountries}
-              className="mt-6 px-4 py-2 bg-gray-950 text-white rounded-lg shadow-md hover:bg-teal-950 transition duration-300 w-full"
+      <ul className="space-y-3 text-gray-700">
+        {/* Show countries list if not in visa types view */}
+        {!showVisaTypes && !viewingVisaDetail &&
+          Object.keys(countriesData).map((country, index) => (
+            <li
+              key={index}
+              onClick={() => handleCountrySelect(country)}
+              className={`cursor-pointer hover:text-black hover:bg-custom-blue transition duration-300 px-6 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
+                country === selectedCountry ? "bg-custom-blue text-white" : ""
+              }`}
             >
-              Back to Countries
-            </button>
-          )}
+              <span>{country}</span>
+              <AiFillCaretRight className="h-4 w-4 text-gray-900" />
+            </li>
+          ))}
 
-          {/* Back button to go back to visa types */}
-          {viewingVisaDetail && (
-            <button
-              onClick={handleBackToVisaTypes}
-              className="mt-6 px-4 py-2 bg-gray-950 text-white rounded-lg shadow-md hover:bg-teal-950 transition duration-300 w-full"
+        {/* Show visa types if in visa types view */}
+        {showVisaTypes &&
+          countriesData[selectedCountry]?.visaTypes.map((visa, index) => (
+            <li
+              key={index}
+              onClick={() => handleVisaSelect(visa)}
+              className={`cursor-pointer hover:text-white hover:bg-custom-blue transition duration-300 px-4 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
+                visa === selectedVisa ? "bg-custom-blue text-white" : ""
+              }`}
             >
-              Back to Visa Types
-            </button>
-          )}
+              <span>{visa}</span>
+              {getIconForVisaType(visa)}
+            </li>
+          ))}
+      </ul>
+
+      {/* Back button to go back to countries list */}
+      {showVisaTypes && !viewingVisaDetail && (
+        <button
+          onClick={handleBackToCountries}
+          className="mt-6 px-4 py-2 bg-gray-950 text-white rounded-lg shadow-md hover:bg-teal-950 transition duration-300 w-full"
+        >
+          Back to Countries
+        </button>
+      )}
+
+      {/* Back button to go back to visa types */}
+      {viewingVisaDetail && (
+        <button
+          onClick={handleBackToVisaTypes}
+          className="mt-6 px-4 py-2 bg-gray-950 text-white rounded-lg shadow-md hover:bg-teal-950 transition duration-300 w-full"
+        >
+          Back to Visa Types
+        </button>
+      )}
+    </div>
+
+    {/* Right Content (Country description and visa details) */}
+    <div className="w-full lg:w-[70%]">
+      {/* Display default content if no country selected */}
+      {!selectedCountry ? (
+        <div>
+          <h3 className="text-3xl font-semibold text-black text-center mt-12">
+            Germany Opportunity Card - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
+          </h3>
+          {/* Your other default content */}
         </div>
-
-        {/* Right Content (Country description and visa details) */}
-        <div className="lg:w-[70%] w-full">
-          {/* Display default content if no country selected */}
-          {!selectedCountry ? (
-            <div>
-               <h3 className="text-3xl font-semibold text-black text-center">
-  Germany Opportunity Card - <span style={{ color: 'rgb(247, 109, 58)' }}>VJC Overseas</span>
- 
-</h3>
-              {/* Your other default content */}
-            </div>
-          ) : (
+      ) : (
+        <>
+          {!viewingVisaDetail ? (
             <>
-              {!viewingVisaDetail ? (
+              {!selectedVisa ? (
                 <>
-                  {!selectedVisa ? (
-                    <>
-                      <h3 className="text-3xl font-semibold text-black mb-4 mt-40 text-center">{selectedCountry}</h3>
-                      <p className="text-lg text-gray-600 mb-8 text-center">{countriesData[selectedCountry]?.description}</p>
-                      {/* Display country image below the description */}
-                      <div className="text-center">
-                        <image
-                          src={countriesData[selectedCountry]?.image}
-                          alt={selectedCountry}
-                          className="mx-auto mt-4 max-w-full h-auto rounded-lg shadow-md"
-                        />
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <h3 className="text-3xl font-semibold text-black mb-4 text-center">{selectedVisa}</h3>
-                      <p className="text-lg text-gray-600 mb-8 text-center">
-                        Learn more about {selectedVisa} for {selectedCountry}.
-                      </p>
-                    </>
-                  )}
+                  <h3 className="text-3xl font-semibold text-black mb-4 text-center">{selectedCountry}</h3>
+                  <p className="text-lg text-gray-600 mb-8 text-center">{countriesData[selectedCountry]?.description}</p>
+                  {/* Display country image below the description */}
+                  <div className="text-center">
+                    <image
+                      src={countriesData[selectedCountry]?.image}
+                      alt={selectedCountry}
+                      className="mx-auto mt-4 max-w-full h-auto rounded-lg shadow-md"
+                    />
+                  </div>
                 </>
               ) : (
                 <>
-                  <h3 className="text-3xl font-semibold text-black mb-4 text-center">Details for {selectedVisa}</h3>
+                  <h3 className="text-3xl font-semibold text-black mb-4 text-center">{selectedVisa}</h3>
                   <p className="text-lg text-gray-600 mb-8 text-center">
-                    Here you can find all the information about {selectedVisa} for {selectedCountry}.
+                    Learn more about {selectedVisa} for {selectedCountry}.
                   </p>
                 </>
               )}
             </>
+          ) : (
+            <>
+              <h3 className="text-3xl font-semibold text-black mb-4 text-center">Details for {selectedVisa}</h3>
+              <p className="text-lg text-gray-600 mb-8 text-center">
+                Here you can find all the information about {selectedVisa} for {selectedCountry}.
+              </p>
+            </>
           )}
-           <Content />
-        </div>
-      </div>
+        </>
+      )}
+      <Content />
+    </div>
+  </div>
+</section>
 
-      
-    </section>
   );
 };
 
