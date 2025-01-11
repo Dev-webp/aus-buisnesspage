@@ -2,12 +2,23 @@ import React from "react";
 
 const Content = () => {
   return (
+    
     <div style={{
         position: 'relative', 
         padding: '50px', 
         boxSizing: 'border-box',
         backgroundColor: 'white', 
+        fontFamily:'Times New Roman',
+        position: 'relative',
+  overflow: 'hidden',
       }}>
+      <div style={{marginBottom: '40px' }}>
+  <h3 className="text-3xl font-semibold text-black text-center">
+    Germany Opportunity Card - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
+  </h3>
+</div>
+
+        
       <h3 style={{ color: "black", fontWeight: "bold", marginBottom: '20px' }}>
         VJC Overseas: Germany Opportunity Card – Your Gateway to a Bright Future
       </h3>
@@ -17,7 +28,7 @@ const Content = () => {
       
 
       <div className="flex flex-col lg:flex-row items-start h-auto lg:space-x-6 space-y-4 lg:space-y-0">
-  {/* Image Section */}
+
   <div className="flex-shrink-0 mx-auto lg:mx-0">
     <img
       src="/gocimg.png"

@@ -4,10 +4,18 @@ import {  AiOutlineBook, AiOutlineCodepen, AiOutlineShop, AiOutlineUsergroupAdd,
 import { FaShieldAlt, FaBriefcase } from "react-icons/fa";
 import { AiFillCaretRight } from "react-icons/ai";
 import Content from "./Content"; 
+import Gworkvisa from "./Gworkvisa";
+import Gstudentvisa from "./Gstudentvisa";
+import Gtouristvisa from "./Gtouristvisa";
+import Gdependentvisa from "./Gdependentvisa";
+import Gselfempvisa from "./Gselfempvisa";
+import Gfreelance from "./Gfreelance";
+
+
 
 const countriesData = {
     "Migrate to Germany": {
-      description: "Germany is a key player in Europe and provides many opportunities for workers and students. It's known for its strong economy and excellent universities.",
+      description:"",
       image: "https://example.com/germany-image.jpg", // Add the image URL here
       visaTypes: [
         "Germany Opportunity Card",
@@ -184,7 +192,7 @@ const Migrate = () => {
               key={index}
               onClick={() => handleCountrySelect(country)}
               className={`cursor-pointer hover:text-black hover:bg-custom-blue transition duration-300 px-6 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
-                country === selectedCountry ? "bg-custom-blue text-white" : ""
+                country === selectedCountry ? "bg-custom-blue text-black" : ""
               }`}
             >
               <span>{country}</span>
@@ -198,8 +206,8 @@ const Migrate = () => {
             <li
               key={index}
               onClick={() => handleVisaSelect(visa)}
-              className={`cursor-pointer hover:text-white hover:bg-custom-blue transition duration-300 px-4 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
-                visa === selectedVisa ? "bg-custom-blue text-white" : ""
+              className={`cursor-pointer hover:text-black hover:bg-custom-blue transition duration-300 px-4 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
+                visa === selectedVisa ? "bg-custom-blue text-black" : ""
               }`}
             >
               <span>{visa}</span>
@@ -233,20 +241,22 @@ const Migrate = () => {
     <div className="w-full lg:w-[70%]">
       {/* Display default content if no country selected */}
       {!selectedCountry ? (
-        <div>
-          <h3 className="text-3xl font-semibold text-black text-center mt-12">
-            Germany Opportunity Card - <span style={{ color: 'rgb(220, 4, 4)' }}>VJC Overseas</span>
-          </h3>
-          {/* Your other default content */}
-        </div>
+         <div>
+          <Content />
+        
+       </div>
+       
       ) : (
         <>
           {!viewingVisaDetail ? (
             <>
               {!selectedVisa ? (
                 <>
-                  <h3 className="text-3xl font-semibold text-black mb-4 text-center">{selectedCountry}</h3>
-                  <p className="text-lg text-gray-600 mb-8 text-center">{countriesData[selectedCountry]?.description}</p>
+                  {/* <h3 className="text-3xl font-semibold text-black mb-4 text-center">{selectedCountry}</h3> */}
+                  <p className="text-lg text-gray-600 mb-8 text-center">{countriesData[selectedCountry]?.title}</p>
+                  <p className="text-lg text-gray-600 mb-8 text-center">
+                {countriesData[selectedCountry]?.description}
+              </p>
                   {/* Display country image below the description */}
                   <div className="text-center">
                     <image
@@ -255,15 +265,31 @@ const Migrate = () => {
                       className="mx-auto mt-4 max-w-full h-auto rounded-lg shadow-md"
                     />
                   </div>
+                  {/* Render Content component only for "Migrate to Germany" */}
+              {selectedCountry === "Migrate to Germany" && <Content />}
                 </>
               ) : (
                 <>
-                  <h3 className="text-3xl font-semibold text-black mb-4 text-center">{selectedVisa}</h3>
+                  <h3 className="text-3xl font-semibold text-black mb-4 text-center"></h3>
                   <p className="text-lg text-gray-600 mb-8 text-center">
-                    Learn more about {selectedVisa} for {selectedCountry}.
+                   {/* {selectedVisa} for {selectedCountry}. */}
                   </p>
+                  {/* Render Content component for "Germany Opportunity Card" */}
+              {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Opportunity Card" && <Content />}
+              {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Work Visa" && <Gworkvisa />}
+              {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Student Visa" && <Gstudentvisa />}
+              {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Tourist Visa" && <Gtouristvisa />}
+              {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Dependent Visa" && <Gdependentvisa />}
+              {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Self Employment Visa" && <Gselfempvisa />}
+              {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Freelance Visa" && <Gfreelance />}
+              
+              
+             
                 </>
+                
+                
               )}
+              
             </>
           ) : (
             <>
@@ -275,7 +301,7 @@ const Migrate = () => {
           )}
         </>
       )}
-      <Content />
+      
     </div>
   </div>
 </section>
