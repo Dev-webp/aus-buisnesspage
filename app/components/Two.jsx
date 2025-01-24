@@ -10,6 +10,64 @@ import Gtouristvisa from "./Gtouristvisa";
 import Gdependentvisa from "./Gdependentvisa";
 import Gselfempvisa from "./Gselfempvisa";
 import Gfreelance from "./Gfreelance";
+import UKBvisa from "./UKBvisa";
+import UKTvisa from "./UKTvisa";
+import UKinnovatorvisa from "./UKinnovatorvisa";
+import UKsponvisa from "./UKsponvisa";
+import UKstudvisa from "./UKstudvisa";
+
+import HKtourist from "./HongKongpages/HKtourist";
+import HKemployee from "./HongKongpages/HKemployee";
+import HKstudentvisa from "./HongKongpages/HKstudentvisa";
+
+import HKbusiness from "./HongKongpages/HKbusiness";
+import HKdependent from "./HongKongpages/HKdependent";
+import HKwork from "./HongKongpages/HKwork";
+
+import Canadastudent from "./Canadapages/Canadastudent";
+import Canadatourist from "./Canadapages/Canadatourist";
+import Canadapr from "./Canadapages/Canadapr";
+import Canadafs from "./Canadapages/Canadafs";
+
+import Ausstud from "./Australia-visa/Aus-stud"
+import Ausfamily from "./Australia-visa/Aus-family"
+import Ausdependent from "./Australia-visa/Aus-dependent"
+import Ausbusiness from "./Australia-visa/Aus-business"
+import Aussponser from "./Australia-visa/Aus-sponsor";
+import Auswork from "./Australia-visa/Aus-work"
+
+import Denbusiness from "./Denmark-visa/Den-business"
+import Denstud from "./Denmark-visa/Den-stud"
+import Denwork from "./Denmark-visa/Den-work"
+import Dentourist from "./Denmark-visa/Den-tourist"
+
+
+import Newzepr from "./Newzealand-visa/Newze-pr"
+import Newzedepen from "./Newzealand-visa/Newze-Depen"
+import Newzeskillwork from "./Newzealand-visa/Newze-skillwork"
+import Newzestud from "./Newzealand-visa/Newze-stud"
+import Newzetourist from "./Newzealand-visa/Newze-tourist"
+import Newzebusiness from "./Newzealand-visa/Newze-business"
+import Newzework from "./Newzealand-visa/Newze-work"
+
+import UAEstud from "./UAE-visa/UAE-stud";
+import UAEgolden from "./UAE-visa/UAE-golden";
+import UAEwork from "./UAE-visa/UAE-work";
+import UAEgreen from "./UAE-visa/UAE-green";
+import UAEtourist from "./UAE-visa/UAE-tourist";
+
+
+
+import USAstud from "./USA-visa/USA-stud"
+import USAbusiness from "./USA-visa/USA-business"
+import USAh1b from "./USA-visa/USA-h1b"
+import USAinvestor from "./USA-visa/USA-investor"
+import USAtourist from "./USA-visa/USA-tourist"
+
+
+
+
+
 
 
 
@@ -28,7 +86,7 @@ const countriesData = {
       ]
     },
     "Migrate to Canada": {
-      description: "Canada is one of the top destinations for skilled workers, students, and immigrants. It offers excellent opportunities for work, education, and living.",
+
       image: "https://example.com/canada-image.jpg", // Add the image URL here
       visaTypes: [
         "Canada Work Visa",
@@ -39,7 +97,6 @@ const countriesData = {
       ]
     },
     "Migrate to United States": {
-      description: "The US offers a diverse range of opportunities for professionals, students, and investors. It’s home to world-renowned universities and a robust job market.",
       image: "https://example.com/us-image.jpg", // Add the image URL here
       visaTypes: [
         "USA Student Visa",
@@ -50,7 +107,7 @@ const countriesData = {
       ]
     },
     "Migrate to Australia": {
-      description: "Australia offers a wide variety of immigration pathways for skilled workers, students, and business owners. It's known for its high quality of life.",
+
       image: "https://example.com/australia-image.jpg", // Add the image URL here
       visaTypes: [
         "Australia Student Visa",
@@ -64,7 +121,6 @@ const countriesData = {
       ]
     },
     "Migrate to United Kingdom": {
-      description: "The UK is a popular destination for students and professionals. It provides numerous visa options and has a rich cultural heritage.",
       image: "https://example.com/uk-image.jpg", // Add the image URL here
       visaTypes: [
         "UK Student Visa",
@@ -75,7 +131,6 @@ const countriesData = {
       ]
     },
     "Migrate to New Zealand": {
-      description: "New Zealand is an attractive destination for skilled workers, with high demand in various sectors like agriculture, construction, and healthcare.",
       image: "https://example.com/nz-image.jpg", // Add the image URL here
       visaTypes: [
         "New Zealand Permanent Resident Visa",
@@ -88,7 +143,6 @@ const countriesData = {
       ]
     },
     "Migrate to South Africa": {
-      description: "South Africa offers various opportunities for skilled workers and entrepreneurs in sectors such as healthcare, agriculture, and more.",
       image: "https://example.com/south-africa-image.jpg", // Add the image URL here
       visaTypes: [
         "South Africa Critical Skills Visa",
@@ -98,7 +152,6 @@ const countriesData = {
       ]
     },
     "Migrate to Hong Kong": {
-      description: "Hong Kong is a global hub for finance and business, providing numerous opportunities for professionals in various sectors.",
       image: "https://example.com/hong-kong-image.jpg", // Add the image URL here
       visaTypes: [
         "Hong Kong Student Visa",
@@ -109,8 +162,7 @@ const countriesData = {
         "Hong Kong Work Visa"
       ]
     },
-    "Migrate to Denmark": {
-      description: "Denmark offers excellent opportunities for skilled workers and students, known for its high standard of living and work-life balance.",
+    "Migrate to Denmark":{
       image: "https://example.com/denmark-image.jpg", // Add the image URL here
       visaTypes: [
         "Denmark Student Visa",
@@ -120,7 +172,6 @@ const countriesData = {
       ]
     },
     "Migrate to UAE": {
-      description: "The UAE provides a wide range of visa options for professionals, investors, and students. It’s known for its vibrant economy and high quality of life.",
       image: "https://example.com/uae-image.jpg", // Add the image URL here
       visaTypes: [
         "UAE Student Visa",
@@ -176,7 +227,7 @@ const Migrate = () => {
   return (
 
     
-    <section className="py-10 bg-gradient-to-bl from-white to-orange-50">
+    <section className="py-10 bg-gradient-to-bl from-white to-orange-50" tyle={{fontFamily: "Times New Roman, serif"}}>
   <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-8 mt-5">
     {/* Left Sidebar (Country or Visa List) */}
     <div className="w-full lg:w-[27%] sticky top-0 h-full mb-2 lg:mb-0">
@@ -185,42 +236,43 @@ const Migrate = () => {
       </h2>
 
       <ul className="space-y-3 text-gray-700">
-        {/* Show countries list if not in visa types view */}
-        {!showVisaTypes && !viewingVisaDetail &&
-          Object.keys(countriesData).map((country, index) => (
-            <li
-              key={index}
-              onClick={() => handleCountrySelect(country)}
-              className={`cursor-pointer hover:text-black hover:bg-custom-blue transition duration-300 px-6 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
-                country === selectedCountry ? "bg-custom-blue text-black" : ""
-              }`}
-            >
-              <span>{country}</span>
-              <AiFillCaretRight className="h-4 w-4 text-gray-900" />
-            </li>
-          ))}
+  {/* Show countries list if not in visa types view */}
+  {!showVisaTypes && !viewingVisaDetail &&
+    Object.keys(countriesData).map((country, index) => (
+      <li
+        key={index}
+        onClick={() => handleCountrySelect(country)}
+        className={`cursor-pointer px-6 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center transition duration-300 ${
+          country === selectedCountry ? "bg-orange-300 text-black" : "hover:bg-orange-300 hover:text-black"
+        }`}
+      >
+        <span>{country}</span>
+        <AiFillCaretRight className="h-4 w-4 text-gray-900" />
+      </li>
+    ))}
 
-        {/* Show visa types if in visa types view */}
-        {showVisaTypes &&
-          countriesData[selectedCountry]?.visaTypes.map((visa, index) => (
-            <li
-              key={index}
-              onClick={() => handleVisaSelect(visa)}
-              className={`cursor-pointer hover:text-black hover:bg-custom-blue transition duration-300 px-4 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center ${
-                visa === selectedVisa ? "bg-custom-blue text-black" : ""
-              }`}
-            >
-              <span>{visa}</span>
-              {getIconForVisaType(visa)}
-            </li>
-          ))}
-      </ul>
+  {/* Show visa types if in visa types view */}
+  {showVisaTypes &&
+    countriesData[selectedCountry]?.visaTypes.map((visa, index) => (
+      <li
+        key={index}
+        onClick={() => handleVisaSelect(visa)}
+        className={`cursor-pointer px-4 py-2 rounded-lg shadow-md transform hover:scale-105 flex justify-between items-center transition duration-300 ${
+          visa === selectedVisa ? "bg-orange-300 text-black" : "hover:bg-orange-300 hover:text-black"
+        }`}
+      >
+        <span>{visa}</span>
+        {getIconForVisaType(visa)}
+      </li>
+    ))}
+</ul>
+
 
       {/* Back button to go back to countries list */}
       {showVisaTypes && !viewingVisaDetail && (
         <button
           onClick={handleBackToCountries}
-          className="mt-6 px-4 py-2 bg-gray-950 text-white rounded-lg shadow-md hover:bg-teal-950 transition duration-300 w-full"
+          className="mt-6 px-4 py-2 bg-gray-950 text-white rounded-lg shadow-md hover:bg-teal-950 transition duration-300 w-full hover:bg-orange-300"
         >
           Back to Countries
         </button>
@@ -230,7 +282,7 @@ const Migrate = () => {
       {viewingVisaDetail && (
         <button
           onClick={handleBackToVisaTypes}
-          className="mt-6 px-4 py-2 bg-gray-950 text-white rounded-lg shadow-md hover:bg-teal-950 transition duration-300 w-full"
+          className="mt-6 px-4 py-2 bg-gray-950 text-white hover:bg-orange-300 rounded-lg shadow-md hover:bg-teal-950 transition duration-300 w-full"
         >
           Back to Visa Types
         </button>
@@ -242,7 +294,7 @@ const Migrate = () => {
       {/* Display default content if no country selected */}
       {!selectedCountry ? (
          <div>
-          <Content />
+          <Gdependentvisa />
         
        </div>
        
@@ -253,7 +305,7 @@ const Migrate = () => {
               {!selectedVisa ? (
                 <>
                   {/* <h3 className="text-3xl font-semibold text-black mb-4 text-center">{selectedCountry}</h3> */}
-                  <p className="text-lg text-gray-600 mb-8 text-center">{countriesData[selectedCountry]?.title}</p>
+                  <p className="text-lg text-gray-600 mb-8 text-center ">{countriesData[selectedCountry]?.title}</p>
                   <p className="text-lg text-gray-600 mb-8 text-center">
                 {countriesData[selectedCountry]?.description}
               </p>
@@ -267,6 +319,15 @@ const Migrate = () => {
                   </div>
                   {/* Render Content component only for "Migrate to Germany" */}
               {selectedCountry === "Migrate to Germany" && <Content />}
+              {selectedCountry === "Migrate to United Kingdom" && <UKstudvisa />}
+              {selectedCountry === "Migrate to Hong Kong" && <HKstudentvisa />}
+              {selectedCountry === "Migrate to Canada" && <Canadastudent />}
+              {selectedCountry === "Migrate to Australia" && <Ausstud />}
+              {selectedCountry === "Migrate to Denmark" && <Denstud />}
+              {selectedCountry === "Migrate to New Zealand" && <Newzepr />}
+              
+              {selectedCountry === "Migrate to UAE" && <UAEstud/>}
+              {selectedCountry === "Migrate to United States" && <USAstud />}
                 </>
               ) : (
                 <>
@@ -282,8 +343,60 @@ const Migrate = () => {
               {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Dependent Visa" && <Gdependentvisa />}
               {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Self Employment Visa" && <Gselfempvisa />}
               {selectedCountry === "Migrate to Germany" && selectedVisa === "Germany Freelance Visa" && <Gfreelance />}
-              
-              
+
+              {selectedCountry === "Migrate to United Kingdom"  && selectedVisa === "UK Business Visa" && <UKBvisa />}
+              {selectedCountry === "Migrate to United Kingdom" && selectedVisa === "UK Tourist Visa" && <UKTvisa /> }
+              {selectedCountry === "Migrate to United Kingdom" && selectedVisa === "UK Innovator Visa" && <UKinnovatorvisa />}
+             {selectedCountry === "Migrate to United Kingdom" && selectedVisa === "UK Sponsorship Visa" && <UKsponvisa />}
+             {selectedCountry === "Migrate to United Kingdom" && selectedVisa === "UK Student Visa" && <UKstudvisa />}
+
+             {selectedCountry === "Migrate to Hong Kong" && selectedVisa === "Hong Kong Student Visa" && <HKstudentvisa />}
+             {selectedCountry === "Migrate to Hong Kong" && selectedVisa === "Hong Kong Employment Visa" && <HKemployee />}
+             {selectedCountry === "Migrate to Hong Kong" && selectedVisa === "Hong Kong Business Visa" && <HKbusiness />}
+             {selectedCountry === "Migrate to Hong Kong" && selectedVisa === "Hong Kong Tourist Visa" && <HKtourist />}
+             {selectedCountry === "Migrate to Hong Kong" && selectedVisa === "Hong Kong Dependent Visa" && <HKdependent />}
+             {selectedCountry === "Migrate to Hong Kong" && selectedVisa === "Hong Kong Work Visa" && <HKwork />}
+             
+             {selectedCountry === "Migrate to Canada" && selectedVisa === "Canada Student Visa" && <Canadastudent/>}
+             {selectedCountry === "Migrate to Canada" && selectedVisa === "Canada Tourist Visa" && <Canadatourist />}
+             {selectedCountry === "Migrate to Canada" && selectedVisa === "Canada Permanent Residency Visa" && <Canadapr />}
+             {selectedCountry === "Migrate to Canada" && selectedVisa === "Canada Family Sponsorship Visa" && <Canadafs />}
+
+             {selectedCountry === "Migrate to Australia" && selectedVisa === "Australia Student Visa" && <Ausstud />}
+              {selectedCountry === "Migrate to Australia" && selectedVisa === "Australia Sponsorship Visa" && <Aussponser />}
+              {selectedCountry === "Migrate to Australia" && selectedVisa === "Australia Dependent Visa" && <Ausdependent />}
+              {selectedCountry === "Migrate to Australia" && selectedVisa === "Australia Family Visa" && <Ausfamily />}
+              {selectedCountry === "Migrate to Australia" && selectedVisa === "Australia Business Visa" && <Ausbusiness />}
+              {selectedCountry === "Migrate to Australia" && selectedVisa === "Australia Work Visa" && <Auswork></Auswork>}
+             
+                {/* Render Content component for "Denmark Opportunity Card" */}
+              {selectedCountry === "Migrate to Denmark" && selectedVisa === "Denmark Business Visa" && <Denbusiness/>}
+              {selectedCountry === "Migrate to Denmark" && selectedVisa === "Denmark Student Visa" && <Denstud/>}
+              {selectedCountry === "Migrate to Denmark" && selectedVisa === "Denmark Tourist Visa" && <Dentourist/>}
+              {selectedCountry === "Migrate to Denmark" && selectedVisa === "Denmark Work Permit Visa" && <Denwork/>}
+
+              {/* Render Content component for "Newzealand Opportunity Card" */}
+              {selectedCountry === "Migrate to New Zealand" && selectedVisa === "New Zealand Business Visa" && <Newzebusiness/>}
+              {selectedCountry === "Migrate to New Zealand" && selectedVisa === "New Zealand Student Visa" && <Newzestud/>}
+              {selectedCountry === "Migrate to New Zealand" && selectedVisa === "New Zealand Permanent Resident Visa" && <Newzepr/>}
+              {selectedCountry === "Migrate to New Zealand" && selectedVisa === "New Zealand Tourist Visa" && <Newzetourist/>}
+              {selectedCountry === "Migrate to New Zealand" && selectedVisa === "New Zealand Dependent Visa" && <Newzedepen/>}
+              {selectedCountry === "Migrate to New Zealand" && selectedVisa === "New Zealand Work Visa" && <Newzework/>}
+              {selectedCountry === "Migrate to New Zealand" && selectedVisa === "New Zealand Skilled Work Visa" && <Newzeskillwork/>}
+
+              {selectedCountry === "Migrate to UAE" && selectedVisa === "UAE Student Visa" && <UAEstud/>}
+              {selectedCountry === "Migrate to UAE" && selectedVisa === "UAE Golden Visa" && <UAEgolden/>}
+              {selectedCountry === "Migrate to UAE" && selectedVisa === "UAE Green Visa" && <UAEgreen/>}
+              {selectedCountry === "Migrate to UAE" && selectedVisa === "UAE Work Visa" && <UAEwork/>}
+              {selectedCountry === "Migrate to UAE" && selectedVisa === "UAE Tourist Visa" && <UAEtourist/>}
+     
+              {/* Render Content component for "USA Opportunity Card" */}
+              {selectedCountry === "Migrate to United States" && selectedVisa === "USA Business Visa" && <USAbusiness/>}
+               {selectedCountry === "Migrate to United States" && selectedVisa === "USA Student Visa" && <USAstud/>}
+               {selectedCountry === "Migrate to United States" && selectedVisa === "USA Investor Visa" && <USAinvestor/>}
+               {selectedCountry === "Migrate to United States" && selectedVisa === "USA Tourist Visa" && <USAtourist/>}
+               {selectedCountry === "Migrate to United States" && selectedVisa === "USA H1B Visa" && <USAh1b/>}
+
              
                 </>
                 
@@ -291,7 +404,7 @@ const Migrate = () => {
               )}
               
             </>
-          ) : (
+          ) : (   
             <>
               <h3 className="text-3xl font-semibold text-black mb-4 text-center">Details for {selectedVisa}</h3>
               <p className="text-lg text-gray-600 mb-8 text-center">

@@ -11,6 +11,7 @@ const Content = () => {
             fontFamily:'Times New Roman',
             position: 'relative',
   overflow: 'hidden',
+  marginTop:'-7%',
           }}
         >
           <div style={{marginBottom: '40px' }}>
@@ -26,9 +27,21 @@ const Content = () => {
           <p style={{ marginBottom: '20px' }}>
             At VJC Overseas, we specialize in providing professional visa assistance to help you obtain your Germany Tourist Visa quickly and efficiently. Our dedicated team ensures that your application process is smooth, hassle-free, and meets all the requirements set by the German authorities.
           </p>
-      
           <h3 className="text-black font-bold mb-4 text-lg sm:text-xl">Why Choose VJC Overseas for Your Germany Tourist Visa?</h3>
-          <ul>
+
+          <div className="flex flex-col lg:flex-row items-start h-auto lg:space-x-6 space-y-4 lg:space-y-0">
+  {/* Image Section */}
+  <div className="flex-shrink-0 mx-auto lg:mx-0">
+    <img
+      src="/gtvimage.jpg"
+      alt="Image description"
+      className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-80 lg:h-70 object-contain shadow-lg rounded-lg"
+    />
+    
+  </div>
+      
+          
+          <ul style={{marginBottom:'20px'}}>
             <li>
               <strong style={{ color: 'rgb(3, 60, 65)', fontWeight: 'bolder' }}>• Expert Guidance:</strong> Our experienced visa consultants ensure your application is complete and error-free.
             </li>
@@ -38,18 +51,19 @@ const Content = () => {
             <li>
               <strong style={{ color: 'rgb(3, 60, 65)' }}>• Quick and Reliable:</strong> Submit your visa application on time, avoiding unnecessary delays.
             </li>
-            <li>
+            <li style={{marginBottom:'20px'}}>
               <strong style={{ color: 'rgb(3, 60, 65)' }}>• Comprehensive Support:</strong> From document verification to appointment scheduling and application submission.
             </li>
           </ul>
+          </div>
       
           <h3 className="text-black font-bold mb-4 text-lg sm:text-xl">What is a Germany Tourist Visa?</h3>
-          <p>
+          <p style={{marginBottom:'20px'}}>
             A Germany Tourist Visa (Schengen Visa Type C) allows you to visit Germany for tourism, sightseeing, or visiting friends and family. This short-stay visa is valid for up to 90 days within a 180-day period and permits travel to other Schengen Area countries.
           </p>
       
           <h3 className="text-black font-bold mb-4 text-lg sm:text-xl">Requirements for a Germany Tourist Visa</h3>
-          <ul>
+          <ul style={{marginBottom:'20px'}}>
             <li>
               <strong style={{ color: 'rgb(3, 60, 65)', fontWeight: 'bolder' }}>• Completed Visa Application Form:</strong> Accurately filled and signed.
             </li>
@@ -79,7 +93,7 @@ const Content = () => {
             </li>
           </ul>
       
-          <h3 className="text-black font-bold mb-4 text-lg sm:text-xl">The Germany Visa Application Process</h3>
+          <h3 className="text-black font-bold mb-4 text-lg sm:text-xl" style={{marginBottom:'20px'}}>The Germany Visa Application Process</h3>
           <ol>
             <li>• Consultation with VJC Overseas to assess your eligibility.</li>
             <li>• Guidance in preparing necessary documents.</li>
@@ -93,11 +107,11 @@ const Content = () => {
             Germany offers diverse experiences depending on where you go. From Berlins rich history to Munichs Bavarian charm, the Black Forests natural beauty, and Colognes stunning cathedral, there’s something for everyone.
           </p>
       
-          <h4>Contact VJC Overseas today and let us help you embark on your Germany adventure!</h4>
+          <h4 style={{marginBottom:'20px'}}>Contact VJC Overseas today and let us help you embark on your Germany adventure!</h4>
           <h3 className="text-black font-bold mb-4 text-lg sm:text-xl">
     Why Apply for Your Germany Tourist Visa with VJC Overseas?
   </h3>
-  <ul>
+  <ul style={{marginBottom:'20px'}}>
     <li>
       <strong style={{ color: 'rgb(3, 60, 65)', fontWeight: 'bolder' }}>• Ease and Convenience:</strong> Applying for a visa can often feel overwhelming, but we make it simple by providing clear, step-by-step guidance tailored to your needs.
     </li>
