@@ -68,7 +68,7 @@ const ContactPage = () => {
               style={{ fontFamily: "Times New Roman, serif" }} 
               variants={titleVariants}
             >
-              Migrate to Germany with Dependent Visa
+              Migrate to Germany with Work Visa
             </motion.h1>
             <motion.p
               className="flex text-black tracking-tight text-left md:font-medium max-w-xl lg:max-w-lg mt-6"
